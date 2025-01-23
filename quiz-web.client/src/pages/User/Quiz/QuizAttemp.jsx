@@ -104,28 +104,6 @@ const QuizAttempt = () => {
           <Card
             style={{ border: '1px solid #1890ff' }}
             title={<span style={{ color: '#1890ff' }}>{`Question ${currentQuestion + 1}: ${questions[currentQuestion].question}`}</span>}
-            extra={
-              <Row justify="space-between" gutter={[16, 16]}>
-                <Col>
-                  <Button
-                    disabled={currentQuestion === 0}
-                    onClick={handlePrevious}
-                    style={{ background: '#f0f5ff', color: '#1890ff', borderColor: '#1890ff' }}
-                  >
-                    Previous
-                  </Button>
-                </Col>
-                <Col>
-                  <Button
-                    type="primary"
-                    disabled={currentQuestion === questions.length - 1}
-                    onClick={handleNext}
-                  >
-                    Next
-                  </Button>
-                </Col>
-              </Row>
-            }
           >
             <Radio.Group
               style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
@@ -148,6 +126,26 @@ const QuizAttempt = () => {
                 </Radio>
               ))}
             </Radio.Group>
+            <Row style={{display:'flex', justifyContent:"flex-end", marginTop:"12px"}} gutter={[16, 16]}>
+                <Col>
+                  <Button
+                    disabled={currentQuestion === 0}
+                    onClick={handlePrevious}
+                    style={{ background: '#f0f5ff', color: '#1890ff', borderColor: '#1890ff' }}
+                  >
+                    Previous
+                  </Button>
+                </Col>
+                <Col>
+                  <Button
+                    type="primary"
+                    disabled={currentQuestion === questions.length - 1}
+                    onClick={handleNext}
+                  >
+                    Next
+                  </Button>
+                </Col>
+              </Row>
           </Card>
 
         </Col>

@@ -33,7 +33,7 @@ const DetailQuiz = () => {
       { id:3,score: '17/20', timeTaken: '20 mins', date: '2025-01-21' },
       { id:4,score: '19/20', timeTaken: '22 mins', date: '2025-01-20' },
     ]
-
+    , category:'Math'
 
   });
 
@@ -152,6 +152,7 @@ const DetailQuiz = () => {
             title={<span style={{ color: "#1890ff" }}>Quizz Information</span>}
           >
             <Descriptions>
+            <Descriptions.Item label="Category" span={3}><span style={{ color: "#1890ff" }}>{quiz.category}</span></Descriptions.Item>
               <Descriptions.Item label="Price" span={3}><span style={{ color: "#1890ff" }}>{quiz.price}</span></Descriptions.Item>
               <Descriptions.Item label="Number of Questions" span={3}><span style={{ color: "#1890ff" }}>{quiz.questionCount}</span></Descriptions.Item>
               <Descriptions.Item label="Duration" span={3}><span style={{ color: "#1890ff" }}>{quiz.time}</span></Descriptions.Item>

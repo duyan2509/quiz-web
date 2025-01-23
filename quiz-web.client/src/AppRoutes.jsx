@@ -11,6 +11,7 @@ import MyQuiz from "./pages/User/Quiz/MyQuiz"
 import QuizPage  from "./pages/User/Quiz/QuizPage";
 import DetailQuiz from "./pages/User/Quiz/DetailQuiz"
 import QuizAttempt from "./pages/User/Quiz/QuizAttemp";
+import QuizCreate from "./pages/User/Quiz/QuizCreate";
 const AppRoutes = () => {
     return (
       <Router>
@@ -25,6 +26,7 @@ const AppRoutes = () => {
             <Route path="/quizzes/:id/attempt" element={<QuizAttempt />} />
             <Route path="/quizzes/:id/history/:historyId" element={<QuizAttempt />} />
             <Route path="/quizzes/:id" element={<DetailQuiz />} />
+            <Route path="/setup-quizz" element={<QuizCreate />} />
             {/* User Routes */}
             <Route path="/settings" element={<Setting />} />
             <Route path="/my-quiz" element={<MyQuiz />} />
