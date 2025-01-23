@@ -1,11 +1,13 @@
 import React from 'react'
 import { Avatar, Card, Tag, Typography, Button, Tooltip } from 'antd'
+import { useNavigate } from "react-router-dom";
 import { UserOutlined } from '@ant-design/icons';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
 const Quizz = (props) => {
     const { title, time, author, price, id,attempts } = props;
+    const navigate = useNavigate();
 
     return (
         <Card
@@ -43,7 +45,11 @@ const Quizz = (props) => {
                     />
                     <span style={{ fontSize: '14px', color: '#555' }}>{author.name}</span>
                 </div>
-                <Button type="primary">View details</Button>
+                <Button type="primary" 
+                onClick={()=>{
+                    navigate(`/quizzes/${id}`); 
+                  }}
+                >View details</Button>
             </div>
         </Card>
     )

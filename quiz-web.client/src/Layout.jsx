@@ -98,7 +98,7 @@ const MyLayout = ({ children }) => {
           </div>
         </Header>
 
-        <Content style={{ paddingTop: "20px",paddingInline:"40px", background: "#ffffff" }}>
+        <Content style={{ background: "#ffffff" }}>
           {children}
         </Content>
 

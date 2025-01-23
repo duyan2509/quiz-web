@@ -10,6 +10,7 @@ import Setting from "./pages/User/Personal/Setting"
 import MyQuiz from "./pages/User/Quiz/MyQuiz"
 import QuizPage  from "./pages/User/Quiz/QuizPage";
 import DetailQuiz from "./pages/User/Quiz/DetailQuiz"
+import QuizAttempt from "./pages/User/Quiz/QuizAttemp";
 const AppRoutes = () => {
     return (
       <Router>
@@ -21,6 +22,8 @@ const AppRoutes = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/quizzes" element={<QuizPage />} />
+            <Route path="/quizzes/:id/attempt" element={<QuizAttempt />} />
+            <Route path="/quizzes/:id/history/:historyId" element={<QuizAttempt />} />
             <Route path="/quizzes/:id" element={<DetailQuiz />} />
             {/* User Routes */}
             <Route path="/settings" element={<Setting />} />

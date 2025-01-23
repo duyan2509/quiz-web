@@ -40,7 +40,7 @@ const QuizPage = () => {
   };
 
   return (
-    <div>
+    <div style={{ paddingTop: "20px",paddingInline:"40px"}}>
       <Row>
         <Col style={{ marginTop: '50px' }} span={3}>
         <h3>Cost</h3>
