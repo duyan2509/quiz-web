@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate,useLocation  } from "react-router-dom";
 import { Card, Typography, Row, Col, Button, Descriptions, Table } from 'antd';
 
 import { ClockCircleOutlined, UserOutlined } from "@ant-design/icons";
@@ -10,6 +10,9 @@ const { Title, Text, Paragraph } = Typography;
 const DetailQuiz = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const { modify } = location.state || {};
+
   const [quiz, setQuiz] = useState({
     id: 1,
     title: 'Mid-term Math',
@@ -135,7 +138,7 @@ const DetailQuiz = () => {
             rowKey="rank"
             bordered
           />
-
+          {!modify?(
           <Table
             style={{ marginTop: "20px", marginBottom: "20px", border: '1px solid #1890ff', borderRadius: "4px" }}
             title={() => <span style={{ color: "#1890ff" }}><Title style={{ color: "#1890ff" }} level={4}>My Attempts</Title></span>}
@@ -144,7 +147,7 @@ const DetailQuiz = () => {
             pagination={true}
             rowKey="user"
             bordered
-          />
+          />):""}
         </Col>
         <Col span={6}>
           <Card
@@ -158,13 +161,21 @@ const DetailQuiz = () => {
               <Descriptions.Item label="Duration" span={3}><span style={{ color: "#1890ff" }}>{quiz.time}</span></Descriptions.Item>
               <Descriptions.Item label="Created Date" span={3}><span style={{ color: "#1890ff" }}>{quiz.createdDate}</span></Descriptions.Item>
             </Descriptions>
+            {modify?
+            (<Button
+              onClick={() => {
+                navigate(`/setup-quizz`)
+              }}
+              type='primary'
+              style={{marginTop: "12px",  marginBottom: "12px", width: "100%" }}>Quizz Setting</Button>):
+            (<>
             <Button style={{ marginBottom: "12px", marginTop: "12px", width: "100%" }}>Buy Quizz</Button>
             <Button
               onClick={() => {
                 navigate(`/quizzes/${id}/attempt`)
               }}
               type='primary'
-              style={{ marginBottom: "12px", width: "100%" }}>Start Quizz</Button>
+              style={{ marginBottom: "12px", width: "100%" }}>Start Quizz</Button></>)}
           </Card>
         </Col>
       </Row>

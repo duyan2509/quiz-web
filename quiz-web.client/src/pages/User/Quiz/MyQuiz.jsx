@@ -126,6 +126,7 @@ const MyQuiz = () => {
                   author={quiz.author}
                   price={quiz.price}
                   attempts={quiz.attempts}
+                  modify={true}
                 />
               </Col>
             ))}

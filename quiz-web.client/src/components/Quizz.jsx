@@ -6,7 +6,7 @@ import { UserOutlined } from '@ant-design/icons';
 const { Title, Paragraph, Text, Link } = Typography;
 
 const Quizz = (props) => {
-    const { title, time, author, price, id,attempts } = props;
+    const { title, time, author, price, id,attempts, modify} = props;
     const navigate = useNavigate();
 
     return (
@@ -47,7 +47,7 @@ const Quizz = (props) => {
                 </div>
                 <Button type="primary" 
                 onClick={()=>{
-                    navigate(`/quizzes/${id}`); 
+                    navigate(`/quizzes/${id}`,{ state: { modify }}); 
                   }}
                 >View details</Button>
             </div>

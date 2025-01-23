@@ -7,8 +7,9 @@ const QuizPage = () => {
   const [numFound, setNumFound] = useState(0);
   const [categories, setCategories] = useState([{ key: 1, name: "All", count: 22 }, { key: 2, name: "Math", count: 10 }, { key: 3, name: "OOP", count: 12 }]);
   const [costs,setCosts]=useState([{key:1,name:"All"},{key:2,name:"Free"},{key:3,name:"Paid"}])
-  const [selectedCategory, setSelectedCategory] = useState(1);
-  const [selectedCost,setSelectedCost]=useState(1);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCost,setSelectedCost]=useState('All');
+  const [selectedStatus,setSelectedStatus]=useState('All');
   const [timeSort, setTimeSort] = useState('1');
   const [priceSort,setPriceSort]=useState("Increase");
   const quizData = [
@@ -24,12 +25,16 @@ const QuizPage = () => {
     { id: 10, title: 'Economics Final', time: '22mins', author: { name: 'Oliver Harris', url: '' }, price: '32k', attempts: 1 , category:'Math'},
 ];
 
-
+  const statuss=[{key:1,name:"All"},{key:2,name:"Purchased"},{key:3,name:"Not Owned"}];
   const onCostChange = (e) => {
     setSelectedCost(e.target.value);
   };
   const onCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
+  };
+  const onStatusChange = (e) => {
+    console.log(e.target.value)
+    setSelectedStatus(e.target.value);
   };
   const onSearch = (value, _e, info) => console.log(info?.source, value);
   const handleChangeTimeSort = (e) => {
@@ -50,7 +55,7 @@ const QuizPage = () => {
             style={{ display: "flex", flexDirection: "column" }}
           >
             {costs.map((cost) => (
-              <Radio style={{ marginTop: "8px" }} key={cost.key} value={cost.key}>
+              <Radio style={{ marginTop: "8px" }} key={cost.key} value={cost.name}>
                 {cost.name} 
               </Radio>
             ))}
@@ -62,8 +67,20 @@ const QuizPage = () => {
             style={{ display: "flex", flexDirection: "column" }}
           >
             {categories.map((category) => (
-              <Radio style={{ marginTop: "8px" }} key={category.key} value={category.key}>
+              <Radio style={{ marginTop: "8px" }} key={category.key} value={category.name}>
                 {category.name} ({category.count})
+              </Radio>
+            ))}
+          </Radio.Group>
+          <h3 style={{marginTop:"12px"}}>Status</h3>
+          <Radio.Group
+            value={selectedStatus}
+            onChange={onStatusChange}
+            style={{ display: "flex", flexDirection: "column" }}
+          >
+            {statuss.map((statuss) => (
+              <Radio style={{ marginTop: "8px" }} key={statuss.key} value={statuss.name}>
+                {statuss.name} 
               </Radio>
             ))}
           </Radio.Group>
@@ -93,7 +110,7 @@ const QuizPage = () => {
                 <Radio.Button value="decrease">Decrease</Radio.Button>
                 <Radio.Button value="increase">Increase</Radio.Button>
               </Radio.Group>
-
+             
             </div>
             <div style={{ fontSize: "16px" }}>
               <span style={{ color: "#1890ff" }}>{numFound}</span><b > result found</b>
@@ -116,6 +133,7 @@ const QuizPage = () => {
                         author={quiz.author}
                         price={quiz.price}
                         attempts={quiz.attempts}
+                        modify={false}
                     />
                 </Col>
             ))}
