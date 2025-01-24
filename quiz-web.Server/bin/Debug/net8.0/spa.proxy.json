@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:58881",
+"RedirectUrl": "",
+"LaunchCommand": "npm run dev",
+"WorkingDirectory": "C:\\Users\\Admin\\DHCNTT\\quiz-web\\quiz-web\\quiz-web.Server\\..\\quiz-web.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}
