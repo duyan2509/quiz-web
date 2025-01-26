@@ -7,7 +7,9 @@ namespace quiz_web.Server.Service.IService
     {
         Task<List<QuestionDto>> UpdateQuestionsAsync(List<QuestionDto> updateQuestionDto);
         Task<List<QuestionDto>> CreateQuestionsAsync(List<CreateQuestionDto> createQuestionDto);
-        Task<AnswerCount> CreateAsync(int QuestionId);
+        Task<AnswerCount> CreateAnswerCountAsync(int QuestionId);
+        Task<AnswerCount> UpdateAnswerCountAsync(int QuestionId,string selectedOption);
+
         Task<bool> DeleteAsync(int QuestionId);
 
     }
