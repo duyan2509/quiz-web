@@ -17,5 +17,6 @@ namespace quiz_web.Server.Service.IService
         Task<QuizzDetailDto> UpdateAsync(int id, QuizzModifyDto quizzModifyDto);
 
         Task<bool> DeleteAsync(int id);
+        Task<QuizzDetailDto> CreateAsync(QuizzCreateDto quizzCreateDto);
     }
 }

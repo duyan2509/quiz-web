@@ -4,5 +4,6 @@
     {
         public long QuizzId { get; set; }
         public TimeSpan Taken { get; set; }
+        public List<CreateResultDto> createResultDtos { get; set; }
     }
 }

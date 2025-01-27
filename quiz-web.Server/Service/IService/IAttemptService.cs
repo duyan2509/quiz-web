@@ -28,26 +28,7 @@ namespace quiz_web.Server.Service.IService
         /// <param name="size"></param>
         /// <returns></returns>
         Task<PagedResult<AttemptDto>> GetAllByUserAndQuizzAsync(int index, int size);
-        /// <summary>
-        /// create result for attempt
-        /// </summary>
-        /// <param name="results"></param>
-        /// <param name="attempt_id"></param>
-        /// <returns></returns>
-        Task<List<ResultDto>> CreateResultsAsync(List<CreateResultDto> createReusltDtos, int attempt_id);
-        /// <summary>
-        /// get all result for attempt
-        /// </summary>
-        /// <param name="attemptId"></param>
-        /// <param name="index"></param>
-        /// <param name="size"></param>
-        /// <returns></returns>
-        Task<PagedResult<ResultDto>> GetAllResults(int attemptId, int index, int size);
-        /// <summary>
-        /// update score for attempt
-        /// </summary>
-        /// <param name="attempt_id"></param>
-        /// <returns></returns>
-        Task<AttemptDto> UpdateScore(int attempt_id);
+       
+
     }
 }
