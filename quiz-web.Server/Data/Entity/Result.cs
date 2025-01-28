@@ -2,9 +2,9 @@
 {
     public class Result
     {
-        public long Id { get; set; }
-        public long AttemptId { get; set; }
-        public long QuestionId { get; set; }
+        public int Id { get; set; }
+        public int AttemptId { get; set; }
+        public int QuestionId { get; set; }
         public string SelectedOption { get; set; }
 
         public Attempt Attempt { get; set; }

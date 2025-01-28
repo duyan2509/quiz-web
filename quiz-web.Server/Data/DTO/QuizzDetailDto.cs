@@ -4,7 +4,7 @@ namespace quiz_web.Server.Data.DTO
 {
     public class QuizzDetailDto
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public long Price { get; set; }
         public string Title { get; set; }
         public string Notes { get; set; }

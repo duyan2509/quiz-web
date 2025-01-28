@@ -2,14 +2,14 @@
 {
     public class Quizz
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public long Price { get; set; }
         public string Title { get; set; }
         public TimeSpan Duration { get; set; }
-        public long CategoryId { get; set; }
+        public int CategoryId { get; set; }
         public string Notes { get; set; }
-        public long QuestionCounts { get; set; }
-        public long AttemptCounts { get; set; }
+        public int QuestionCounts { get; set; }
+        public int AttemptCounts { get; set; }
         public string AuthorId { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }

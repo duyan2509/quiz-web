@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using quiz_web.Server;
 using quiz_web.Server.Data;
 using quiz_web.Server.Data.Entity;
 using quiz_web.Server.Data.Helper;
@@ -19,6 +20,9 @@ builder.Services.AddDbContext<QDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("QuizDtb"));
 });
+
+builder.Services.AddApplicationServices();
+
 //CORS configuration
 builder.Services.AddCors(options =>
 {

@@ -12,8 +12,8 @@ using quiz_web.Server.Data;
 namespace quiz_web.Server.Migrations
 {
     [DbContext(typeof(QDbContext))]
-    [Migration("20250126033905_Result-Option")]
-    partial class ResultOption
+    [Migration("20250128030622_CreateDtb")]
+    partial class CreateDtb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -160,26 +160,26 @@ namespace quiz_web.Server.Migrations
 
             modelBuilder.Entity("quiz_web.Server.Data.Entity.AnswerCount", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<long>("CntOpt1")
-                        .HasColumnType("bigint");
+                    b.Property<int>("CntOpt1")
+                        .HasColumnType("int");
 
-                    b.Property<long>("CntOpt2")
-                        .HasColumnType("bigint");
+                    b.Property<int>("CntOpt2")
+                        .HasColumnType("int");
 
-                    b.Property<long>("CntOpt3")
-                        .HasColumnType("bigint");
+                    b.Property<int>("CntOpt3")
+                        .HasColumnType("int");
 
-                    b.Property<long>("CntOpt4")
-                        .HasColumnType("bigint");
+                    b.Property<int>("CntOpt4")
+                        .HasColumnType("int");
 
-                    b.Property<long>("QuestionId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -229,8 +229,8 @@ namespace quiz_web.Server.Migrations
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("PaymentId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("PaymentId")
+                        .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
@@ -269,17 +269,17 @@ namespace quiz_web.Server.Migrations
 
             modelBuilder.Entity("quiz_web.Server.Data.Entity.Attempt", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("AttemptAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("QuizzId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("QuizzId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Score")
                         .IsRequired()
@@ -303,11 +303,11 @@ namespace quiz_web.Server.Migrations
 
             modelBuilder.Entity("quiz_web.Server.Data.Entity.Category", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -320,11 +320,11 @@ namespace quiz_web.Server.Migrations
 
             modelBuilder.Entity("quiz_web.Server.Data.Entity.PaymentCard", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.HasKey("Id");
 
@@ -333,11 +333,11 @@ namespace quiz_web.Server.Migrations
 
             modelBuilder.Entity("quiz_web.Server.Data.Entity.Purchase", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<long>("Price")
                         .HasColumnType("bigint");
@@ -345,8 +345,8 @@ namespace quiz_web.Server.Migrations
                     b.Property<DateTime>("PurchaseAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("QuizzId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("QuizzId")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -363,11 +363,11 @@ namespace quiz_web.Server.Migrations
 
             modelBuilder.Entity("quiz_web.Server.Data.Entity.Question", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -397,11 +397,11 @@ namespace quiz_web.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("Ordinal")
-                        .HasColumnType("bigint");
+                    b.Property<int>("Ordinal")
+                        .HasColumnType("int");
 
-                    b.Property<long>("QuizzId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("QuizzId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -412,21 +412,21 @@ namespace quiz_web.Server.Migrations
 
             modelBuilder.Entity("quiz_web.Server.Data.Entity.Quizz", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<long>("AttemptCounts")
-                        .HasColumnType("bigint");
+                    b.Property<int>("AttemptCounts")
+                        .HasColumnType("int");
 
                     b.Property<string>("AuthorId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<long>("CategoryId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -441,8 +441,8 @@ namespace quiz_web.Server.Migrations
                     b.Property<long>("Price")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("QuestionCounts")
-                        .HasColumnType("bigint");
+                    b.Property<int>("QuestionCounts")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -462,17 +462,17 @@ namespace quiz_web.Server.Migrations
 
             modelBuilder.Entity("quiz_web.Server.Data.Entity.Result", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<long>("AttemptId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("AttemptId")
+                        .HasColumnType("int");
 
-                    b.Property<long>("QuestionId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
 
                     b.Property<string>("SelectedOption")
                         .IsRequired()

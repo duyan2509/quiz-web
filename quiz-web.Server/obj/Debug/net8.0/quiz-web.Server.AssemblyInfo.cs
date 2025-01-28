@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("quiz-web.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9c2975dce54774c6e4c16b30d997484a524c2e1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6657c97b8f44ddc2136aa852eeaaf7871bd90f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("quiz-web.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("quiz-web.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

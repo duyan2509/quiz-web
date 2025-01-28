@@ -8,14 +8,14 @@ namespace quiz_web.Server.Data
     {
         public QDbContext(DbContextOptions<QDbContext> opt) : base(opt) { }
         #region
-        DbSet<AnswerCount> Answers { get; set; }
-        DbSet<Attempt> Attempts { get; set; }
-        DbSet<Category> Categories { get; set; }
-        DbSet<PaymentCard> PaymentCards { get; set; }
-        DbSet<Purchase> Purchase { get; set; }
-        DbSet<Question> Questions { get; set; }
-        DbSet<Quizz> Quizzs { get; set; }
-        DbSet<Result> Results { get; set; }
+        public DbSet<AnswerCount> Answers { get; set; }
+        public DbSet<Attempt> Attempts { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<PaymentCard> PaymentCards { get; set; }
+        public DbSet<Purchase> Purchase { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Quizz> Quizzs { get; set; }
+        public DbSet<Result> Results { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -2,8 +2,8 @@
 {
     public class Attempt
     {
-        public long Id { get; set; }
-        public long QuizzId { get; set; }
+        public int Id { get; set; }
+        public int QuizzId { get; set; }
         public string UserId { get; set; }
         public DateTime AttemptAt { get; set; }
         public string Score { get; set; }

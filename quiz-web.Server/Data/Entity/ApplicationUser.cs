@@ -6,7 +6,7 @@ namespace quiz_web.Server.Data.Entity
     {
         public string Url { get; set; } = null!;
         public string Name { get; set; }
-        public long PaymentId { get; set; }
+        public int PaymentId { get; set; }
 
         public PaymentCard PaymentCard { get; set; }
         public ICollection<Purchase> Purchases { get; set; }
